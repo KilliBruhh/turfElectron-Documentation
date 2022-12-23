@@ -3,11 +3,15 @@
 ## Description
 - I made a turf application to control and view how many drinks you have bought
 - It uses a form on the home page to fill it in, and you can view your turfs on the seconds page. I am planning to add a settings page zhere you can change it into dark mode but i have not completeted that at the time of writing
+- THe settings tab is empty. I wanted to use this to do some extra work but did not get there
 
 ## Intro
 - For My GUI i used the tabs templated from ionic
 - I reused some code of my 2nd lab but I redit andchanged some parts
   - Like a new form and a added code for an overview page
+- I have 2 IPC function. 1 for validation and 1 for opening a new webpage
+- the nodJS does not work i got an error on startup and did not find a sollution (tried to use fileSystem from NodeJs)
+
 
 ## Steps Followed
 
@@ -165,16 +169,40 @@
   ```
 
 **14. Disable or limit creation of new windows**
-  - becasue of 1 create 2 new windows for the drink brand i implemented this:
-  - 
+  - According to the docs:
+  - the webcontents will delegat to its new open handler before creating new windowas. it will get a url parameter and other paramets
 **15. Do not use shell.openExternal with untrusted content**
-
+  - I dont use SHell.openExternal
+  - if i used this it could lead to leveraged compromises in the users host.
 **16. Use a current version of Electron**
-
+  - version 22.0.0
 **17. Validate the sender of all IPC messages**
+  - tried to include the code from the docs but got this error:
+  - ![valerr](img/validateError.png)
 
 
 
-## Screenshots of working app:
+# **Screenshots of working app:**
 
-## Conclusion
+# Validation
+![proofScreen1](img/Screenshot_1.png) <br><br>
+![proofScreen2](img/Screenshot_2.png) <br><br>
+![proofScreen3](img/Screenshot_3.png) <br><br>
+![proofScreen4](img/Screenshot_4.png)<br><br>
+
+# Product webpage
+![proofScreen5](img/Screenshot_5.png)<br><br>
+
+# UI
+![proofScreen6](img/Screenshot_6.png)<br><br>
+![proofScreen7](img/Screenshot_7.png)<br><br>
+
+
+
+# Conclusion
+
+- When i started to do some research for electron  i came a lot of negative reviews. Peaplea saying that electron was bad and should not be used so i started with a bad feeling and a bit scared.
+- once i started i understood why. Installing and getting everything to work was a bit hard but becasue of the given tutorial/documentation by the teacher it whent ok.
+- understanding IPC was also a bit difficult. it was confusing because I used ionic and most of the tutorials online are only in .js.
+- Saddly as a said eearlier. trying to use a Node.js API call caused errors. and i did not find out in time how. (code still in commentary).
+- The security part was quite interesting. In the courses i had following yewars in TM we never really accounted for securety or really smal like validation and anti sql injection, but never this big and extensive. So that was really interesting about this course and will keep the securety in mind for my next courses.
